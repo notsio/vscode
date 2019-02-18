@@ -33,5 +33,54 @@
 		"@types/mocha": "^2.2.42",
 		"request-promise": "^4.2.2",
 		"ssl-root-cas": "^1.3.1"
+	},
+	"contributes": {
+		"configuration": {
+			"title": "Nots.io",
+			"properties": {
+				"nots-io.apiKey": {
+					"type": "string",
+					"default": "",
+					"description": "Your Nots.io API key (Workspace setting only!)"
+				},
+				"nots-io.projectApiKey": {
+					"type": "string",
+					"default": "",
+					"description": "Project's API key (Workspace setting only!)"
+				},
+				"nots-io.lightBgColor": {
+					"type": "string",
+					"default": "#eee",
+					"description": "Highlight color for light color theme"
+				},
+				"nots-io.darkBgColor": {
+					"type": "string",
+					"default": "#333",
+					"description": "Highlight color for dark color theme"
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "extension.toggleNots",
+				"title": "Nots.io: Toggle Nots"
+			},
+			{
+				"command": "extension.openNots",
+				"title": "Open Nots.io for the Note",
+				"icon": {
+					"light": "./images/logo_bw.png",
+					"dark": "./images/logo_bw.png"
+				}
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "extension.openNots",
+					"group": "navigation"
+				}
+			]
+		}
 	}
 }
