@@ -1,26 +1,39 @@
 {
 	"name": "nots-io",
-	"displayName": "nots.io",
+	"displayName": "Nots.io — Keep your documentation up‑to‑date",
 	"description": "VSCode integration with Nots.io service",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.31.0"
 	},
+	"publisher": "nots-io",
+	"license": "MIT",
+	"homepage": "https://nots.io",
+	"icon": "images/logo.png",
+	"preview": false,
+	"galleryBanner": {
+		"color": "#112126",
+		"theme": "dark"
+	},
+	"keywords": [
+		"docs",
+		"notes",
+		"documentation",
+		"nots.io",
+		"annotation"
+	],
 	"categories": [
+		"Extension Packs",
 		"Other"
 	],
+	"repository": {
+		"url": "https://github.com/notsio/vscode",
+		"type": "git"
+	},
 	"activationEvents": [
 		"*"
 	],
 	"main": "./extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
-			}
-		]
-	},
 	"scripts": {
 		"postinstall": "node ./node_modules/vscode/bin/install",
 		"test": "node ./node_modules/vscode/bin/test"
