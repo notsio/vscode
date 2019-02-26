@@ -2,7 +2,7 @@
 	"name": "nots-io",
 	"displayName": "Nots.io — Keep your documentation up‑to‑date",
 	"description": "VSCode integration with Nots.io service",
-	"version": "0.1.0",
+	"version": "0.1.7",
 	"engines": {
 		"vscode": "^1.31.0"
 	},
@@ -43,9 +43,12 @@
 		"vscode": "^1.1.28",
 		"eslint": "^5.13.0",
 		"@types/node": "^10.12.21",
-		"@types/mocha": "^2.2.42",
-		"request-promise": "^4.2.2",
-		"ssl-root-cas": "^1.3.1"
+		"@types/mocha": "^2.2.42"
+	},
+	"dependencies": {
+		"request-promise": "^4.2.4",
+		"ssl-root-cas": "^1.3.1",
+		"request": "^2.34"
 	},
 	"contributes": {
 		"configuration": {
@@ -75,11 +78,11 @@
 		},
 		"commands": [
 			{
-				"command": "extension.toggleNots",
+				"command": "nots-io.toggleNots",
 				"title": "Nots.io: Toggle Nots"
 			},
 			{
-				"command": "extension.openNots",
+				"command": "nots-io.openNots",
 				"title": "Open Nots.io for the Note",
 				"icon": {
 					"light": "./images/logo_bw.png",
@@ -90,7 +93,7 @@
 		"menus": {
 			"editor/context": [
 				{
-					"command": "extension.openNots",
+					"command": "nots-io.openNots",
 					"group": "navigation"
 				}
 			]

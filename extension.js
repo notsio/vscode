@@ -33,7 +33,7 @@ async function activate(context) {
 	let current_response = null;
 
 	function get_keys() {
-		
+		root_config = workspace.getConfiguration("nots-io");
 		let api_key = root_config.get("apiKey");
 		let project_api_key = root_config.get("projectApiKey");
 		return [api_key, project_api_key];
@@ -70,7 +70,8 @@ async function activate(context) {
 		}
 		current_editor = window.activeTextEditor;
 
-		let file_name = window.activeTextEditor.document.fileName;
+		let uri = window.activeTextEditor.document.uri;
+		let file_name = workspace.asRelativePath(uri).replace(/\\/g, '/');
 		let is_untitled = window.activeTextEditor.document.isUntitled;
 		let line_count = window.activeTextEditor.document.lineCount;
 		let repository = await get_repository();
@@ -83,7 +84,7 @@ async function activate(context) {
 
 		if (file_name && !is_untitled && line_count && repository && api_key && project_api_key) {
 
-			let commit_sha = repository.getCommit("HEAD").hash;
+			let commit_sha = (await repository.getCommit("HEAD")).hash;
 			let options = {
 				method: 'GET',
 				uri: 'https://nots.io/api/editor',
@@ -97,11 +98,13 @@ async function activate(context) {
 					'Content-Type': 'application/json'
 				},
 				strictSSL: false,
+				simple: false,
 				//json: true
 			}
-			response = await rp(options);
+			//response = await rp(options);
+			let response = await rp(options);
+			
 			if(!response) {return;}
-
 			current_response = JSON.parse(response);
 
 			let text_ranges = [];
@@ -142,7 +145,7 @@ async function activate(context) {
 		}
 	}));
 
-	context.subscriptions.push(vscode.commands.registerCommand('extension.toggleNots', async () => {
+	context.subscriptions.push(vscode.commands.registerCommand('nots-io.toggleNots', async () => {
 		if(show_nots) {
 			show_nots = false;
 			remove_gutters(window.activeTextEditor);
@@ -153,7 +156,7 @@ async function activate(context) {
 		}
 	}));
 
-	context.subscriptions.push(vscode.commands.registerCommand('extension.openNots', async (event) => {
+	context.subscriptions.push(vscode.commands.registerCommand('nots-io.openNots', async (event) => {
 		let selection = current_editor.selection.active;
 		if(selection && selection.line) {
 			let line = selection.line;
