@@ -1,4 +1,4 @@
-<p align=“center”>
+<p align="center">
   <br />
   <a title="Learn more about Nots.io" href="https://nots.io"><img src="images/Nots-banner.png" srcset
 ="images/Nots-banner.png, images/Nots-banner@2x.png 2x" alt="Nots.io banner" style="max-width:100%"/></a>
