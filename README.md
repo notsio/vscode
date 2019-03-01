@@ -1,65 +1,48 @@
-# nots-io README
+<p align=“center”>
+  <br />
+  <a title="Learn more about Nots.io" href="https://nots.io"><img src="https://nots.io/images/plugins/Nots-banner.png" srcset
+="https://nots.io/images/plugins/Nots-banner.png, https://nots.io/images/plugins/Nots-banner@2x.png 2x" alt="Nots.io banner" /></a>
+</p>
 
-This is the README for your extension "nots-io". After writing up a brief description, we recommend including the following sections.
+> The golden rule of documentation is to keep docs **close** to the code. [Nots.io](https://nots.io) lets you attach text, file or image directly to the source code. We track **changes** in it so your docs are always in-sync with the real source of truth — with your code.
 
-## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Nots.io VSCode plugin
 
-For example if there is an image subfolder under your extension project workspace:
+VSCode plugin is an open-source extension for Visual Studio Code. It shows an gutter icon when there's a note added on this line in Nots.io.
 
-\!\[feature X\]\(images/feature-x.png\)
+![Nots.io plugin integration screenshot](images/screenshot1.png "Plugin integration screenshot")
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+The note area is higlighted with gray color. Click right button and select "Open Nots.io for the Note" to get full information about the note, discussions and attached files.
+
+![Nots.io plugin context menu](images/screenshot2.png "Nots.io plugin context menu")
+
+To make plugin work, it's required to set up User's API key and Project's API key. In order to work properly they should be set on "Worspace Settings" level only.
+
+![Nots.io plugin settings panel](images/screenshot3.png "Nots.io plugin settings panel")
+
+
+To temporary disable/enable icons and note area   highlighting, the command "Toggle Nots" is defined.
+
+![Nots.io command setion](images/screenshot4.png "Nots.io command setion")
+
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+* vscode 1.31.0 and up
+* macos, linux or windows
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+The `nots-io.lightBgColor` and `nots-io.darkBgColor` settings let you define a bite area higlighting color for light and dark theme respectively.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+[Open Bugs](https://github.com/notsio/vscode/issues)
 
 ## Release Notes
 
 Users appreciate release notes as you update your extension.
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+### 0.1.8
+Stable release with proper README

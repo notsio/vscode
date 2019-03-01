@@ -2,7 +2,7 @@
 	"name": "nots-io",
 	"displayName": "Nots.io — Keep your documentation up‑to‑date",
 	"description": "VSCode integration with Nots.io service",
-	"version": "0.1.7",
+	"version": "0.1.8",
 	"engines": {
 		"vscode": "^1.31.0"
 	},
