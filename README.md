@@ -1,7 +1,7 @@
 <p align="center">
   <br />
-  <a title="Learn more about Nots.io" href="https://nots.io"><img src="images/Nots-banner.png" srcset
-="images/Nots-banner.png, images/Nots-banner@2x.png 2x" alt="Nots.io banner" style="max-width:100%"/></a>
+  <a title="Learn more about Nots.io" href="https://nots.io"><img src="https://github.com/notsio/vscode/raw/master/images/Nots-banner.png" srcset
+="https://github.com/notsio/vscode/raw/master/images/Nots-banner.png, https://raw.githubusercontent.com/notsio/vscode/master/images/Nots-banner@2x.png 2x" alt="Nots.io banner" style="max-width:100%"/></a>
 </p>
 
 > The golden rule of documentation is to keep docs **close** to the code. [Nots.io](https://nots.io) lets you attach text, file or image directly to the source code. We track **changes** in it so your docs are always in-sync with the real source of truth — with your code.
